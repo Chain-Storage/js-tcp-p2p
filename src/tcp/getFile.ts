@@ -70,7 +70,17 @@ async function getFile() {
 
   let fileArrayOutput: any = await Promise.all(promises);
 
-  var fileArray = fileArrayOutput[0];
+  let fileArray: any[] = [];
+
+  for (let index = 0; index < fileArrayOutput.length; index++) {
+    const element = fileArrayOutput[index];
+    for (let index = 0; index < element.length; index++) {
+      const subElement = element[index];
+
+      fileArray.push(subElement);
+    }
+  }
+
   fileArray.sort(function (a: any, b: any) {
     let numA = parseInt(a.hash.split("-")[1]);
     let numB = parseInt(b.hash.split("-")[1]);
