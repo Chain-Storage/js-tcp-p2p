@@ -21,7 +21,7 @@ export async function createFile(
   type: string,
   hash: string
 ) {
-  const db = "mongodb://localhost:27017/EtrusChain";
+  const db = "mongodb://127.0.0.1:27017/EtrusChain";
   await connect(db);
 
   const FileModel = getModelForClass(fileClass);
@@ -39,7 +39,7 @@ export async function createFile(
 }
 
 export async function removeFile(hash: string, fileName: string) {
-  const db = "mongodb://localhost:27017/EtrusChain";
+  const db = "mongodb://127.0.0.1:27017/EtrusChain";
   await connect(db);
 
   const FileModel = getModelForClass(fileClass);
@@ -55,7 +55,7 @@ export async function removeFile(hash: string, fileName: string) {
 }
 
 export async function getFileDb(fileHash: string) {
-  const db = "mongodb://localhost:27017/EtrusChain";
+  const db = "mongodb://127.0.0.1:27017/EtrusChain";
   await connect(db);
 
   const FileModel = getModelForClass(fileClass);
